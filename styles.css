@@ -38,13 +38,13 @@
 }
 
 .register{
-    background-color:green;
+    background-color:blue;
     margin: 4px 4px;
     font-size:32px
 }
 
 .sign-in{
-    background-color:red;
+    background-color:green;
     margin: 4px 4px;
     font-size:32px
 }
