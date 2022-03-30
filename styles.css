@@ -1,0 +1,50 @@
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    grid-gap:6px;
+    background-color: aqua;
+    
+    
+    height: 100vh;
+    
+}
+
+.title{
+    grid-column: 1/-1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+}
+.telephone{
+    grid-column: 1/-1;
+}
+.email{
+    grid-column: 1/-1;
+}
+
+.terms-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 26px;
+}
+
+.agreement{
+    background-color:bisque;
+    font-size: 20px;
+    margin: 4px 4px;
+}
+
+.register{
+    background-color:green;
+    margin: 4px 4px;
+    font-size:32px
+}
+
+.sign-in{
+    background-color:red;
+    margin: 4px 4px;
+    font-size:32px
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <form action="sign-up" method="POST">
+
+
+        <article class="container">
+
+            <div class="title">
+                <h1>Sign Up</h1>
+            </div>
+
+            <input type="text" name="First-Name" class="First-Name" placeholder="First Name" required>
+
+            <input type="text" name="Last-Name" class="Last-Name" placeholder="Last Name" required>
+
+            <input type="tel" name="telephone" class="telephone" placeholder="Mobile No." required>
+
+            <input type="email" class="email" placeholder="Email" required>
+
+            <input type="password" name='password' class="password" placeholder="Password" required>
+
+            <input type="password" name='password2' class="password2" placeholder="Confirm Password" required>
+
+            <section class="terms-box">
+
+                <input type="checkbox" name='terms' class="terms" value="I Agree">
+
+                <label for="terms"><strong>I Agree</strong></label>
+
+            </section>
+
+            <section class="agreement">By clicking <strong>Register</strong>, you agree to the <a href="#">Terms and
+                    Conditions</a>
+                set out by this site, including our Cookie Use.
+
+            </section>
+
+            <input type="submit" class="register" value="Register">
+            <input type="button" class="sign-in" onclick="alert('Signed In!')" value="Sign-In">
+
+        </article>
+
+    </form>
+
+
+</body>
+
+</html>
