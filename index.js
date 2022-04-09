@@ -12,24 +12,26 @@ async function postlist(data,id){
         body: JSON.stringify(data)
       })
 }
-async function markToogleTrue(e){
+async function markToogleTrue(e,value){
     let api = await fetch(`http://localhost:3000/todos/${e}`,{
         method:'PUT',
         headers:{
             'Accept': 'application/json',
           'Content-Type': 'application/json'
         },
-        body:JSON.stringify({isCompleted: true})
+        body:JSON.stringify({content:value,isCompleted: true})
     })
 }
 async function editEntry(e,value){
+    let users = getlist();
+    let user = users.find(user => user.id === e);
     let api = await fetch(`http://localhost:3000/todos/${e}`,{
         method:'PUT',
         headers:{
             'Accept': 'application/json',
           'Content-Type': 'application/json'
         },
-        body:JSON.stringify({content: value})
+        body:JSON.stringify({content: value, id:e, isCompleted: user.isCompleted })
     })
 }
 async function markToogleFalse(e){
@@ -39,7 +41,7 @@ async function markToogleFalse(e){
             'Accept': 'application/json',
           'Content-Type': 'application/json'
         },
-        body:JSON.stringify({isCompleted: false})
+        body:JSON.stringify({content:value,isCompleted: false})
     })
 }
 async function mark(e){
@@ -138,10 +140,10 @@ function Toogle(event){
     
     if(parent.className ===list1.className){
         list2.appendChild(li)
-        markToogleTrue(li.firstChild.id);
+        markToogleTrue(li.firstChild.id,li.firstChild.value);
     }else if(parent.className === list2.className){
         list1.appendChild(li);
-        markToogleFalse(li.firstChild.id);
+        markToogleFalse(li.firstChild.id, li.firstChild.value);
     }
 }
 function Delete(event){
@@ -161,7 +163,7 @@ function Edit(event){
     console.log(input.id)
 }
 
-(async(model,list_complete,list_pending,)=>{
+(async(model)=>{
     let Data = await model();
     let finished = Data.filter(ele=>ele.isCompleted===false);
     let pending =Data.filter(ele=>ele.isCompleted===true);
@@ -174,7 +176,7 @@ function Edit(event){
         }
     }
     
-})(getlist,pending(), complete());
+})(getlist);
 
 
 add.addEventListener('click', async function(r){
