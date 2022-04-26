@@ -1,13 +1,12 @@
 import React from 'react';
 
-class downVote extends React.Component {
-    constructor(props) {
+class DownVote extends React.Component {
+    constructor(props){
         super(props);
     }
-
     render(){
-        return <div><button onClick={this.props.downVote()}>Decrement</button></div>
+        return <button onClick={()=>this.props.tick()}>Decrement</button>
     }
 }
 
-export default downVote
+export default DownVote;
