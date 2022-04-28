@@ -1,5 +1,7 @@
-.counter{
-    display:flex;
-    flex-direction: column;
-    border: 1px red solid;
+.todo-list{
+    display:'flex';
+    flex-direction: 'column';
+}
+.list>li{
+    list-style-type: none;
 }

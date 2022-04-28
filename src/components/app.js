@@ -1,26 +1,27 @@
 import React from 'react';
-import UpVote from './upVote.js';
-import DownVote from './downVote.js';
+import Form from './form.js';
+import List from './list.js';
 import './style.css'
 
 class App extends React.Component {
     constructor(props) {
         super(props);
-        this.state={counter:0};
-        this.increment = this.increment.bind(this);
-        this.decrement = this.decrement.bind(this);
+        this.state={list:[]};
+
+        this.addList = this.addList.bind(this);
     }
-    increment() {
-        this.setState({counter:this.state.counter+1})
+    inputRef = React.createRef();
+
+    addList() {
+        let userInput = this.inputRef.current.value;
+        console.log([...this.state.list,userInput])
+        this.setState({list: [...this.state.list,userInput]});
     }
-    decrement() {
-        this.setState({counter:this.state.counter-1})
-    }
+    
     render(){
-        return <div className="counter">
-            <span>{this.state.counter}</span>
-            <UpVote tick={this.increment}/>
-            <DownVote tick={this.decrement}/>
+        return <div className="todo-list">
+            <Form tick={this.addList} input={this.inputRef} />
+            <List list={this.state.list}/>
             </div>
     }
 }
