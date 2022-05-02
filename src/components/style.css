@@ -1,0 +1,25 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    background: linear-gradient(to top, blue,white , red);
+    top:0%;
+}
+.main{
+    display:flex;
+    flex-direction: column;
+    margin: 15px;
+    justify-content: space-between;
+    align-items: center;
+   
+}
+
+.mainLists{
+    display:flex;
+    flex-direction: row;
+}
+
+ul>li{
+    list-style-type: none;
+}

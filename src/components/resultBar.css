@@ -1,0 +1,14 @@
+.resultList{
+   width: 50%;
+}
+.resultItem{
+    height:250px;
+    overflow: auto;
+    cursor: pointer;
+    margin:10px;
+}
+.resultItem:hover{
+    box-shadow: 10px 5px 5px;
+    font-weight: bold;
+    border:1px solid black;
+}
