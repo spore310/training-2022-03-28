@@ -1,0 +1,21 @@
+
+.app{
+    display:flex;
+    flex-direction:column;
+    width:100%;
+    height: 100vh;
+    border: 3px solid black;
+}
+
+.lists{
+    display:flex;
+    flex-direction:row;
+    border: 1px solid purple;
+    gap:200px
+    
+}
+.lists>div{
+    width:550px;
+    border: 1px solid green;
+    height:400px;
+}
