@@ -1,0 +1,32 @@
+.inputs{
+    width:100%;
+    height:auto;
+    border:1px solid yellow;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.inputs>*{
+    height:50px;
+}
+.inputs>input[type="text"]{
+    width:250px;
+}
+.inputs>button{
+    width:100px;
+    height:55px;
+    border:solid 2px;
+    border-radius: 50%;
+    text-decoration: bold;
+    font-weight: medium;
+}
+.inputs>button:hover{
+    font-weight: bold;
+    font-size:large;
+    background:red;
+}
+.inputs>button:active{
+    font-weight: bold;
+    font-size:small;
+    background: purple;
+}
