@@ -8,10 +8,10 @@ export default function WishList() {
     const exec = useDispatch();
     try{
     return (<div className="wishlistWrapper">
-        <span><strong>WishList: {wishlistArray.length?wishlistArray.length:0}</strong></span>
+        <h2>WishList: {wishlistArray.length?wishlistArray.length:0}</h2>
         <ul className='wishlist'>
         {wishlistArray.map((item,index)=>{
-            return<li key={index} onClick={()=>exec(removeList(item.id))}><strong>{index+1}.</strong> {item.volumeInfo.title}</li>
+            return<li key={index} onClick={()=>exec(removeList(item.id))}><span className='wishlistIndex'><strong>{index+1}.</strong></span> <span className='wishlistTitle'>{item.volumeInfo.title}</span></li>
         })}
     </ul>
     </div>);

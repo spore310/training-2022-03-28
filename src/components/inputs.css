@@ -1,7 +1,7 @@
 .inputs{
     width:100%;
     height:auto;
-    border:1px solid yellow;
+    
     display:flex;
     flex-direction: row;
     justify-content: center;
@@ -11,6 +11,8 @@
 }
 .inputs>input[type="text"]{
     width:250px;
+    background:lightcyan;
+    font-size:20px;
 }
 .inputs>button{
     width:100px;
@@ -19,14 +21,20 @@
     border-radius: 50%;
     text-decoration: bold;
     font-weight: medium;
+    background: lightblue;
+    transition: all .2 ease-in-out;
 }
 .inputs>button:hover{
+    transform:scale(.9);
     font-weight: bold;
     font-size:large;
-    background:red;
+    background:lightcyan;
 }
 .inputs>button:active{
     font-weight: bold;
-    font-size:small;
-    background: purple;
+    font-size:.9em;
+    transform:scale(1.1);
+    position: relative;
+    left: 10px;
+    background: lightblue;
 }

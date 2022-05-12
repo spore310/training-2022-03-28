@@ -1,27 +1,54 @@
 .wishlistWrapper{
     display:flex;
     flex-direction:column;
-    align-items: center;
+    align-items:center;
+    background: linear-gradient(to bottom, #b7eaff 0%,#94dfff 100%);
 }
 .wishlist{
-    background:pink;
     list-style-type: none;
-    margin:5px;
+    float: left;
+    
+    width:600px;
+    height:800px;
+    overflow-y:auto;
+    overflow-x: hidden;
+    padding-top:5px;
+    border-radius: inherit;
+    
 }
 .wishlist>li{
-    margin:8px;
-    border:1px solid royalblue;
+    border: 1px black solid;
+    width: 500px;
+    padding:12px 15px;
+    margin: 12px 0;
+    padding-top:8px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: all .1 ease-in-out;
+    border-radius: 50px;
+    background:linear-gradient(to left, teal, cyan);
 }
+
 .wishlist>li:hover{
-    cursor:pointer;
-    background:red;
+    cursor: pointer;
+    transform: scale(1.1);
     font-weight: bold;
-    font-size: 1.5rem;
-    padding:5px;
+    outline: 3px solid lightblue;
+    padding:12px 15px;
+    margin: 10px;
+    background: linear-gradient(to right,lightcyan,white 10%,lightblue);
+    color:rgb(7, 212, 188);
+}
+
+.wishlist>li:hover span.wishlistIndex{
+    font-weight: bold;
+    color:black;
 }
 .wishlist>li:active{
-    cursor:pointer;
-    background: grey;
-    font-size: 1rem;
-    font-weight:lighter;
+    transform:scale(1);
+    padding:6px 8px;
+    outline: 1px solid lightblue;
+    margin:5px 0 0 0;
+    font-weight: normal;
 }

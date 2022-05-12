@@ -32,26 +32,32 @@ export function List({ perPage }) {
                     })}
                 </ul>
                 <div className="paginationList">
-                    {currentPageNumber > 0 ? <button onClick={() => { exec(changePage(currentPageNumber - 1)) }}>{'<'}</button> : null}
-                    {paginationArray.map((page, index) => {
-                        switch (index) {
-                            case currentPageNumber:
-                                return <button key={index} onClick={() => exec(changePage(index))}>{index + 1}</button>
-                            case currentPageNumber + 1:
-                                return <button key={index} onClick={() => exec(changePage(index))}>{index + 1}</button>
-                            case currentPageNumber + 2:
-                                return <button key={index} onClick={() => exec(changePage(index))}>{index + 1}</button>
-                            case currentPageNumber + 3:
-                                return <button key={index}>...</button>
-                            case currentPageNumber - 1:
-                                return <button key={index} onClick={() => exec(changePage(index))}>{index + 1}</button>
-                            case currentPageNumber - 2:
-                                return <button key={index} onClick={() => exec(changePage(index))}>{index + 1}</button>
-                            case currentPageNumber - 3:
-                                return <button key={index}>...</button>
-                        }
-                    })}
-                    {currentPageNumber < paginationArray.length - 1 ? <button onClick={() => { exec(changePage(currentPageNumber + 1)) }}>{'>'}</button> : null}
+                    <div className='paginationBackBtn'>
+                        {currentPageNumber > 0 ? <button onClick={() => { exec(changePage(currentPageNumber - 1)) }}>{'<'}</button> : <button disabled>{'<'}</button>}
+                    </div>
+                    <div className='paginationNumBtn'>
+                        {paginationArray.map((page, index) => {
+                            switch (index) {
+                                case currentPageNumber:
+                                    return <button key={index} onClick={() => exec(changePage(index))}>{index + 1}</button>
+                                case currentPageNumber + 1:
+                                    return <button key={index} onClick={() => exec(changePage(index))}>{index + 1}</button>
+                                case currentPageNumber + 2:
+                                    return <button key={index} onClick={() => exec(changePage(index))}>{index + 1}</button>
+                                case currentPageNumber + 3:
+                                    return <button className='btnTick' key={index}>...</button>
+                                case currentPageNumber - 1:
+                                    return <button key={index} onClick={() => exec(changePage(index))}>{index + 1}</button>
+                                case currentPageNumber - 2:
+                                    return <button key={index} onClick={() => exec(changePage(index))}>{index + 1}</button>
+                                case currentPageNumber - 3:
+                                    return <button className='btnTick' key={index}>...</button>
+                            }
+                        })}
+                    </div>
+                    <div className='paginationNextBtn'>
+                        {currentPageNumber < paginationArray.length - 1 ? <button onClick={() => { exec(changePage(currentPageNumber + 1)) }}>{'>'}</button> : <button disabled>{'>'}</button>}
+                    </div>
                 </div>
             </div>
         );

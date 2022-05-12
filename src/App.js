@@ -12,7 +12,7 @@ function App() {
     <div className="app">
       <ListInput />
       <div className="lists">
-        <List perPage={2} />
+        <List perPage={5} />
         <WishList />
       </div>
     </div>

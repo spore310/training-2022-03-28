@@ -1,17 +1,116 @@
 .resultList{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    align-items:center;
+    background-image: linear-gradient(to bottom, #b7eaff 0%,#94dfff 100%);
 }
 .resultList>ul{
     list-style-type: none;
-    height: 250px;
-    overflow:auto;
-    margin:5px;
+    height: 650px;
+    overflow-y:auto;
+    overflow-x: hidden;
+    
+    width: 630px;
+    padding: 0;
+  
+}
+.resultList>ul::-webkit-scrollbar{
+    width:.5vw;
+}
+.resultList>ul::-webkit-scrollbar-thumb{
+    background-color:white;
+}
+.resultList>ul::-webkit-scrollbar-track{
+    background-color: inherit;
 }
 .resultList>ul>li{
     cursor: pointer;
     display:flex;
     flex-direction: row;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: all .1s ease-in-out;
+    border:cyan;
+    margin-top: 8px;
+    margin-left: 35px;
+    align-self: center;
+    border-radius:25px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    width: 80%;
+   
+    
+}
+.resultList>ul>li:hover{
+    transform: scale(1.1); 
+    margin-top:15px;
+    margin-bottom: 15px;
+    margin-left: 35px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.resultList>ul>li:hover + li{
+    margin-top:25px;
+}
+.resultList>ul>li:active{
+    transform: scale(.9);
+}
+.paginationList{
+    display:flex;
+    flex-direction: row;
+    
+    width: 80%;
+    justify-content: space-between;
+}
+button{
+    border-radius: 50px;
+    height: 30px;
+    width:30px;
+    text-align: center;
+}
+.paginationList{
+    margin-bottom: 8px;
+}
+.paginationList>*>*{
+    background-color: lightblue;
+    border-width:.1px;
+}
+.paginationBackBtn>button:hover{
+    font-weight: bold;
+    padding:auto;
+    font-size: 110%;
+}
+
+.paginationNextBtn>button:hover{
+    font-weight: bold;
+    padding:auto;
+    font-size: 110%;
+}
+
+.paginationNextBtn>button:disabled{
+    font-weight: normal;
+    padding:0;
+}
+
+.paginationBackBtn>button:disabled{
+    font-weight: normal;
+    padding:0;
+}
+.paginationNumBtn>button{
+    transition: all .2s ease-in-out;
+}
+.paginationNumBtn>button:hover{
+   transform: scale(1.3);
+    font-weight: bold;
+    margin: 0 8px;
+}
+.paginationNumBtn>button:active{
+    transform: scale(.9);
+    font-weight: normal;
+    font-size:80%;
+}
+.btnTick:hover{
+    margin:0 0 !important;
+    transform:scale(1) !important;
+    font-weight: normal !important;
 }
